@@ -1,3 +1,12 @@
+@import url("https://use.typekit.net/bqe5zjh.css");
+
+$color-bg: #141418;
+$color-text: #f1f1f1;
+
 body {
-  background-color: #888;
+  color: $color-text;
+  background-color: $color-bg;
+  font-family: "acumin-pro", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
