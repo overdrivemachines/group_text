@@ -1,0 +1,14 @@
+server {
+    listen 80;
+    server_name gt.dipenchauhan.com;
+
+    # Tell Nginx and Passenger where your app's 'public' directory is
+    root /var/www/group_text/code/public;
+
+    # Max file size of uploads
+    client_max_body_size 10M;
+
+    # Turn on Passenger
+    passenger_enabled on;
+    passenger_ruby /home/deploy/.rvm/rubies/ruby-3.2.2/bin/ruby;
+}
