@@ -1,17 +1,20 @@
 <div class="container">
-  <div class="row mt-3">
+  <div class="row mt-3" data-controller="hello">
     <%= form_with url: home_send_message_path, method: :get do |f| %>
       <div class="mb-3">
-        <%= f.label :recipients, "Recipients Phone Numbers", class: "form-label" %>
+        <%= f.label :recipients, "Recipient's Phone Numbers", class: "form-label" %>
         <%= f.text_field :recipients, class: "form-control" %>
         <div id="recipientsHelp" class="form-text">Separate the phone numbers with commas</div>
       </div>
       <div class="mb-3">
         <%= f.label :message, "Message", class: "form-label" %>
-        <%= f.text_area :message, class: "form-control" %>
+        <%= f.text_area :message, class: "form-control", data: {"hello-target": "txtAreaMessage"} %>
       </div>
 
       <%= f.submit "Send", class: "btn btn-primary" %>
+
+      <button class="btn btn-secondary ms-2" data-hello-target="btnTemplate1" data-action="click->hello#loadMessage1">Load Template 1</button>
+      <button class="btn btn-secondary ms-2" data-hello-target="btnTemplate2" data-action="click->hello#loadMessage2">Load Template 2</button>
 
     <% end %>
   </div>
