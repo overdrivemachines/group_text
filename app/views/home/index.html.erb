@@ -1,31 +1,18 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-4 mt-4">
+  <div class="row mt-3">
+    <%= form_with url: home_send_message_path, method: :get do |f| %>
+      <div class="mb-3">
+        <%= f.label :recipients, "Recipients Phone Numbers", class: "form-label" %>
+        <%= f.text_field :recipients, class: "form-control" %>
+        <div id="recipientsHelp" class="form-text">Separate the phone numbers with commas</div>
+      </div>
+      <div class="mb-3">
+        <%= f.label :message, "Message", class: "form-label" %>
+        <%= f.text_area :message, class: "form-control" %>
+      </div>
 
-      <i class="fa-solid fa-house fa-2xl mx-3"></i>
-      <i class="fa-solid fa-plane fa-2xl mx-3"></i>
-      <i class="fa-solid fa-martini-glass fa-2xl mx-3"></i>
+      <%= f.submit "Send", class: "btn btn-primary" %>
 
-    </div>
-    <div class="col-md-8 mt-4">
-      <button type="button" class="btn btn-lg btn-danger" data-bs-toggle="popover" data-bs-title="Popover title" data-bs-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
-    </div>
-  </div>
-
-  <div class="row mt-4">
-    <div class="col-md-8">
-      <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Top popover">
-        Popover on top
-      </button>
-      <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Right popover">
-        Popover on right
-      </button>
-      <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Bottom popover">
-        Popover on bottom
-      </button>
-      <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-content="Left popover">
-        Popover on left
-      </button>
-    </div>
+    <% end %>
   </div>
 </div>
